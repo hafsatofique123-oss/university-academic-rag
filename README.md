@@ -1,52 +1,70 @@
+# 🎓 University Academic Knowledge Assistant
 
-# University Academic RAG Database
+A Retrieval-Augmented Generation (RAG) application designed to help university students ask questions about academic documents.
 
-This folder contains the pre-built vector database
-for the University Student Academic Knowledge Assistant.
+The application uses multiple academic PDF documents as its knowledge source.
 
-## Files
+The original PDF documents are processed offline in Google Colab. Their text is chunked, converted into embeddings, and stored in a FAISS vector database.
 
-### university_faiss.index
+The Streamlit application uses the pre-built FAISS database instead of processing the original PDFs every time the application starts.
 
-FAISS vector index containing:
+---
 
-39 document chunk embeddings.
+## 🚀 Features
 
-### university_metadata.pkl
+- Multiple academic documents
+- Pre-built RAG knowledge base
+- FAISS vector database
+- Semantic similarity search
+- Sentence Transformer embeddings
+- Groq LLM
+- `openai/gpt-oss-120b`
+- Source traceability
+- File name and page number metadata
+- Retrieved chunk display
+- Similarity scores
+- Streamlit user interface
+- Streamlit Cloud deployment ready
 
-Metadata and original text for every chunk.
+---
 
-Metadata includes:
+## 🏗️ Architecture
 
-- file name
-- source
-- page number
-- chunk number
-- total pages
-- chunk ID
-- document type
-- original chunk text
-
-### university_config.json
-
-Configuration information including:
-
-- embedding model
-- embedding dimension
-- chunk size
-- chunk overlap
-- vector database
-- document count
-- chunk count
-
-## Embedding Model
-
-sentence-transformers/all-MiniLM-L6-v2
-
-## Documents
-
-6
-
-## Chunks
-
-39
+```text
+Academic PDFs
+      ↓
+Google Drive
+      ↓
+Google Colab
+      ↓
+Text Extraction
+      ↓
+Page-wise Chunking
+      ↓
+Sentence Transformer
+      ↓
+Embeddings
+      ↓
+FAISS
+      ↓
+Metadata
+      ↓
+GitHub
+      ↓
+Streamlit Cloud
+      ↓
+Student Question
+      ↓
+Query Embedding
+      ↓
+FAISS Similarity Search
+      ↓
+Top-K Relevant Chunks
+      ↓
+Source Metadata
+      ↓
+Groq
+      ↓
+openai/gpt-oss-120b
+      ↓
+Answer + Sources
