@@ -1,0 +1,25 @@
+{
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dimension": 384,
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "vector_database": "FAISS",
+    "similarity_metric": "Inner Product / Cosine Similarity",
+    "document_count": 6,
+    "chunk_count": 39,
+    "document_type": "PDF",
+    "created_for": "University Student Academic Knowledge Assistant",
+    "source_metadata_fields": [
+        "chunk_id",
+        "source",
+        "file_name",
+        "file_path",
+        "page_number",
+        "chunk_number",
+        "total_pages",
+        "text_length",
+        "text",
+        "document_type",
+        "collection"
+    ]
+}
